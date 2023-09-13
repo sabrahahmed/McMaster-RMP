@@ -1,0 +1,229 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap'); 
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.tooltip-container{
+    display: none;
+    position: absolute;
+    top: -205px;
+    left: -275px;
+    z-index: 1;
+    /* background: rgb(111, 19, 54); */
+    background: black;
+    padding: 8px;
+    font-size: 1rem;
+    color: #fff;
+    height: 190px;
+    width: 250px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    animation: fadeIn 0.5s;
+    /* box-shadow: 0 0 10px 5px; */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}
+
+.none{
+    color: rgb(255, 196, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.none a{
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.tooltip{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    text-align: left;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modified-name{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2px;
+    transition: transform 0.2s; 
+}
+
+.modified-name:hover {
+    transform: translateY(-2px);
+}
+
+
+.rating{
+    cursor: pointer;
+    color: white;
+    padding: 4px;
+    margin-top: 1px;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.prof-name {
+    font-size: 13px;
+    cursor: pointer;
+    color: rgb(111, 19, 54);
+    margin-top: 3px;
+}
+
+.tooltip-name{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.tooltip-rating{
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tooltip-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.tooltip-difficulty{
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.description{
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: normal;
+}
+
+.tooltip-take-again{
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.tooltip-based{
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 2px;
+}
+
+.num-ratings{
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.tooltip-disclaimer{
+    font-size: 10px;
+    text-align: center;
+    color: rgb(255, 196, 0);
+}
+
+.tooltip-disclaimer button {
+    background-color: rgb(111, 19, 54);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    margin: 0;
+    outline: none;
+    padding: 8px 14px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: baseline;
+    letter-spacing: 2px;
+}
+
+/* STARS */
+.ratings {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    color: white;
+    overflow: hidden;
+  }
+  
+  .full-stars{
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: rgb(255, 196, 0);
+  }
+  
+  .empty-stars:before,
+  .full-stars:before {
+    content: "\2605\2605\2605\2605\2605";
+    font-size: 25pt;
+  }
+  
+  .empty-stars:before {
+    -webkit-text-stroke: 1px #848484;
+  }
+  
+  .full-stars:before {
+    -webkit-text-stroke: 1px rgb(255, 196, 0);
+  }
+  
+  /* Webkit-text-stroke is not supported on firefox or IE */
+  /* Firefox */
+  @-moz-document url-prefix() {
+    .full-stars{
+      color: rgb(255, 196, 0);
+    }
+  }
+
+/* RateMyProf Toggle */
+.checkbox-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.checkbox-container label{
+    margin-top: 6px;
+    font-size: 13px;
+    padding: 4px 10px 4px 0
+}
+
+.checkbox-container input {
+    margin-top: 9px;
+    height: 17px;
+    width: 17px;
+    cursor: pointer;
+    accent-color: rgb(255, 196, 0);
+}
+
+

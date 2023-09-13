@@ -1,0 +1,28 @@
+# Installation
+> `npm install --save @types/isomorphic-fetch`
+
+# Summary
+This package contains type definitions for isomorphic-fetch (https://github.com/matthew-andrews/isomorphic-fetch).
+
+# Details
+Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/isomorphic-fetch.
+## [index.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/isomorphic-fetch/index.d.ts)
+````ts
+// Type definitions for isomorphic-fetch 0.0
+// Project: https://github.com/matthew-andrews/isomorphic-fetch
+// Definitions by: Todd Lucas <https://github.com/toddlucas>
+// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+declare namespace _fetch { }
+declare const _fetch: typeof fetch;
+export = _fetch;
+
+````
+
+### Additional Details
+ * Last updated: Thu, 10 Mar 2022 05:31:42 GMT
+ * Dependencies: none
+ * Global values: none
+
+# Credits
+These definitions were written by [Todd Lucas](https://github.com/toddlucas).

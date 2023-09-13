@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@mtucourses/rate-my-professors": "^2.2.1",
+    "extension-cli": "^1.2.4"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "path": "node --experimental-import-meta-resolve path.js"
+  }
+}
