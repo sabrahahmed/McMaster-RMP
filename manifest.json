@@ -3,19 +3,15 @@
   "name": "McMaster RateMyProf",
   "version": "1.0",
   "description": "Access RateMyProf ratings directly from McMaster's MyTimetable!",
-  "permissions": [
-    "activeTab",
-    "scripting",
-    "storage",
-    "webRequest"
-  ],
   "background": {
-    "service_worker": "background.js",
-    "type": "module"
+    "service_worker": "background.js"
   },
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
-      "matches": ["*://mytimetable.mcmaster.ca/criteria.jsp?access=*"],
+      "matches": ["*://mytimetable.mcmaster.ca/criteria.jsp*"],
       "css": ["styles.css"],
       "js": ["content.js"]
     }
