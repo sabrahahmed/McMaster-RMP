@@ -1,4 +1,9 @@
 <h1> McMaster RateMyProf Chrome Extension </h1>
+<p align="center">
+  <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/860aeab1-d175-466b-85ec-b20f25f3067a" width="600"/>
+</p>
+
+<br>
 
 <h2> Description </h2>
 A full-stack Chrome extension that seamlessly integrates RateMyProfessors.com ratings into McMaster University’s course enrollment page, providing students with easy access for informed selections
