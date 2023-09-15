@@ -19,7 +19,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["./node_modules/@mtucourses/rate-my-professors/*"],
+      "resources": ["icons/icon128.png", "styles.css"],      
       "matches": ["<all_urls>"]
     }
   ],

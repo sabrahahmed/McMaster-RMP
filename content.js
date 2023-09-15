@@ -2,7 +2,7 @@ const professorCache = {};
 const fetchedProfessors = {};
 
 // Cache with professor info, to avoid repeat api calls on mutations
-function addToCache(name, prof) {
+const addToCache = (name, prof) => {
     if(prof === 'N/A'){
         professorCache[name] = 'N/A'
         return
@@ -20,12 +20,7 @@ function addToCache(name, prof) {
 }
 
 // Fetch prof info from API
-async function getProf(name) {
-    // If name is long, shorten 
-    if (name.length > 21) {
-        name = name.slice(0, 21) + '...';
-    }
-
+const getProf = async (name) => {
     try {
         const response = await fetch(`https://glorious-gown-crow.cyclic.app/api/getProf/${name}`);
         if (!response.ok) {
@@ -41,7 +36,12 @@ async function getProf(name) {
     }
 }
 
-function createProfContainerDiv(type, name, rating, difficulty, percentage, id, numRatings){
+const createProfContainerDiv = (type, name, rating, difficulty, percentage, id, numRatings) => {
+    // If name is long, shorten 
+    if (name.length > 21) {
+        name = name.slice(0, 21) + '...';
+    }
+
     if(type === 'N/A'){
         const urlName = name.replace(' ', '+');
         const googleSearch = `https://www.google.ca/search?q=${urlName}+rate+my+professor`
@@ -123,7 +123,7 @@ function createProfContainerDiv(type, name, rating, difficulty, percentage, id, 
 }
 
 // Modify DOM elements to display ratings + tooltips
-async function modifyProfElements(professorElement) {
+const modifyProfElements = async (professorElement) => {
     const professorNames = professorElement.textContent.trim().split('; ');
     professorElement.innerHTML = ''
 
@@ -154,7 +154,7 @@ async function modifyProfElements(professorElement) {
 
         const tooltip = ratingContainer.querySelector(".tooltip-container");
 
-        function showTooltip() {
+        const showTooltip = () => {
             const tooltips = document.querySelectorAll(".tooltip-container");
             tooltips.forEach((tooltip) => {
                 tooltip.style.display = "none";
@@ -163,7 +163,7 @@ async function modifyProfElements(professorElement) {
             tooltip.style.display = "block";
         }
 
-        function hideTooltip () {
+        const hideTooltip = () => {
             tooltip.style.display = "none"
         }
         
@@ -179,7 +179,7 @@ async function modifyProfElements(professorElement) {
 }
 
 // General function to be called on all professors found on the page
-function displayRatings(professorElements) {
+const displayRatings = (professorElements) => {
     professorElements.forEach((professorElement) => {
         if (!professorElement.classList.contains('ratings-modified')) {
             modifyProfElements(professorElement);
@@ -189,7 +189,7 @@ function displayRatings(professorElements) {
 }
     
 // To observe changes in the DOM
-function handleMutation(mutationsList) {
+const handleMutation = (mutationsList) => {
     mutationsList.forEach((mutation) => {
         if (mutation.type === 'childList') {
             // Update  professorElements reference
@@ -199,17 +199,31 @@ function handleMutation(mutationsList) {
     });
 }
     
-chrome.runtime.sendMessage({ getExtensionState: true }, (response) => {
-    if (response && response.extensionState) {
-        const observer = new MutationObserver(handleMutation);
-        const parentElement = document.body;
-        const observerConfig = {
-            childList: true,
-            subtree: true,
-        };
-        observer.observe(parentElement, observerConfig);
-    }
-});
+// Funny popup
+const createFunnyPopup = () => {
+    const funnyPopup = document.createElement('div');
+    funnyPopup.className = 'funny-popup';
+  
+    // Use chrome.runtime.getURL to get the extension's base URL
+    const imageURL = chrome.runtime.getURL('./icons/icon128.png');
+  
+    funnyPopup.innerHTML = `
+        <img src="${imageURL}" alt="">
+        <div class="funny-popup-message">Choose wisely.</div>
+    `;
+    
+    document.body.appendChild(funnyPopup);
 
-
+    setTimeout(() => {
+        funnyPopup.remove();
+    }, 3000); 
+}
+  
+// Check if the URL contains the specific portion
+if (window.location.href.includes('https://mytimetable.mcmaster.ca/')) {
+    createFunnyPopup();
+}
+  
+  
+  
 
