@@ -1,11 +1,13 @@
-<h1> McMaster RateMyProf Chrome Extension </h1>
+<h1> McMaster RateMyProf </h1>
 <p align="center">
   <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/860aeab1-d175-466b-85ec-b20f25f3067a" width="200"/>
 </p>
 
 <h2> Description </h2>
-A full-stack Chrome extension that seamlessly integrates RateMyProfessors.com ratings into McMaster University’s course enrollment page, providing students with easy access for informed selections
+A full-stack Chrome extension that seamlessly integrates RateMyProfessors.com ratings into McMaster University’s course enrollment page, providing students with easy access for informed selections.
+<br/>
 API: https://github.com/sabrahahmed/McMaster-RMP_API<br/>
+
 <br/>
 This Device-Controller Monitor (DCM), built using Python, enables remote transmission of instructions and receipt of data from a pacemaker (developed by team in MATLAB Simulink). The DCM features an intuitive and user-friendly interface that supports up to ten simultaneous users who can log in, register, and interact with their pacemakers. 
 <br/>
