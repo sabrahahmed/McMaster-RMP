@@ -21,6 +21,12 @@ Upon logging in, users can easily customize their pacemaker settings across four
   <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/5e6ddab1-4cac-4c53-a293-9069f2a4e43e" width="600"/>
 </p>
 
+Upon logging in, users can easily customize their pacemaker settings across four pacing modes and visualize live heart electrogram data captured via PySerial (serial communication) and plotted using Python's Matplotlib library.
+
+<p align="center">
+  <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/5a1ddf9c-7b9b-48ad-9ba8-d99d52f89b59" width="600"/>
+</p>
+
 Users can also sign-out or choose to delete their account. 
 
 <p align="center">
