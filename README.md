@@ -7,7 +7,6 @@
 A full-stack Chrome extension that seamlessly integrates RateMyProfessors.com ratings into McMaster University’s course enrollment page, providing students with easy access for informed selections!
 <br/><br/>
 API: https://github.com/sabrahahmed/McMaster-RMP_API<br/>
-<br/><br/>
 Chrome Web Store: Under review. Stay Tuned! 
 
 <br/>
