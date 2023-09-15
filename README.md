@@ -3,8 +3,6 @@
   <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/860aeab1-d175-466b-85ec-b20f25f3067a" width="50"/>
 </p>
 
-<br>
-
 <h2> Description </h2>
 A full-stack Chrome extension that seamlessly integrates RateMyProfessors.com ratings into McMaster University’s course enrollment page, providing students with easy access for informed selections
 API: https://github.com/sabrahahmed/McMaster-RMP_API<br/>
