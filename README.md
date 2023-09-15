@@ -9,7 +9,7 @@ This Device-Controller Monitor (DCM), built using Python, enables remote transmi
 <br/>
 
 <p align="center">
-  <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/1674c5f2-6ded-4b22-888c-7e11756b1db1" width="400"/>
+  <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/1674c5f2-6ded-4b22-888c-7e11756b1db1" width="600"/>
 </p>
 
 Upon logging in, users can easily customize their pacemaker settings across four pacing modes and visualize live heart electrogram data captured via PySerial (serial communication) and plotted using Python's Matplotlib library.
@@ -21,7 +21,7 @@ Upon logging in, users can easily customize their pacemaker settings across four
 Users can also sign-out or choose to delete their account. 
 
 <p align="center">
-  <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/be0c5da6-0a08-4a2b-ac87-3253caaf24fe" width="400"/>
+  <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/be0c5da6-0a08-4a2b-ac87-3253caaf24fe" width="600"/>
 </p>
 
 
