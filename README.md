@@ -9,7 +9,7 @@ A full-stack Chrome extension that seamlessly integrates RateMyProfessors.com ra
 API: https://github.com/sabrahahmed/McMaster-RMP_API<br/>
 
 <br/>
-This Device-Controller Monitor (DCM), built using Python, enables remote transmission of instructions and receipt of data from a pacemaker (developed by team in MATLAB Simulink). The DCM features an intuitive and user-friendly interface that supports up to ten simultaneous users who can log in, register, and interact with their pacemakers. 
+After logging in to the course enrollment page, the extension activates and promptly initiates the process of detecting any professor names on the page, subsequently retrieving their data from RateMyProfessors.com. The professors' ratings are displayed next to their names, color-coded based on the score. 
 <br/>
 <br/>
 
@@ -17,7 +17,7 @@ This Device-Controller Monitor (DCM), built using Python, enables remote transmi
   <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/1674c5f2-6ded-4b22-888c-7e11756b1db1" width="600"/>
 </p>
 
-Upon logging in, users can easily customize their pacemaker settings across four pacing modes and visualize live heart electrogram data captured via PySerial (serial communication) and plotted using Python's Matplotlib library.
+Students can also hover over the ratings or professor names, triggering a popup to appear next to each professor, providing additional information about their ratings. This data encompasses their overall rating, difficulty level, the percentage of students who would consider taking their course(s) again, and the total number of ratings contributing to these scores. Students are also encouraged to assess the accuracy of these ratings by reading reviews, which they can access directly from the popup. Clicking on the reviews will redirect them to the selected professor's RateMyProfessors.com profile.
 
 <p align="center">
   <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/5e6ddab1-4cac-4c53-a293-9069f2a4e43e" width="600"/>
@@ -29,7 +29,7 @@ Upon logging in, users can easily customize their pacemaker settings across four
   <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/5a1ddf9c-7b9b-48ad-9ba8-d99d52f89b59" width="600"/>
 </p>
 
-Users can also sign-out or choose to delete their account. 
+Users can also click on the extension and choose to turn it on or off. 
 
 <p align="center">
   <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/94682735-4414-4de6-bd28-5300a3d817bd" width="600"/>
