@@ -23,7 +23,7 @@ Students can also hover over the ratings or professor names, triggering a popup 
   <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/5e6ddab1-4cac-4c53-a293-9069f2a4e43e" width="600"/>
 </p>
 
-Upon logging in, users can easily customize their pacemaker settings across four pacing modes and visualize live heart electrogram data captured via PySerial (serial communication) and plotted using Python's Matplotlib library.
+In cases where some professors do not have a RateMyProfessors.com profile under McMaster University because they previously taught at a different institution, or when the names on the McMaster course enrollment page do not directly match their name on RateMyProfessors.com, students will receive a notification. They will have the option to click on a search hyperlink, which will initiate a Google search for the professor's name to retrieve any available information about them.
 
 <p align="center">
   <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/5a1ddf9c-7b9b-48ad-9ba8-d99d52f89b59" width="600"/>
@@ -34,8 +34,6 @@ Users can also click on the extension and choose to turn it on or off.
 <p align="center">
   <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/94682735-4414-4de6-bd28-5300a3d817bd" width="600"/>
 </p>
-
-
 
 <h2> Installation and Usage </h2>
 NOTE: this application is meant to be connected to a Pacemaker device to use all features. To run the application, you will need to install Python 3.6 or above and pull the project from github to a local repo. Afterwards, open the project in a code editor of your choice (e.g. PyCharm). You will need to install the following libraries in your terminal to run the project: 
