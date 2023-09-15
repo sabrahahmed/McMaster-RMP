@@ -36,24 +36,7 @@ Users can also click on the extension and choose to turn it on or off.
 </p>
 
 <h2> Installation and Usage </h2>
-NOTE: this application is meant to be connected to a Pacemaker device to use all features. To run the application, you will need to install Python 3.6 or above and pull the project from github to a local repo. Afterwards, open the project in a code editor of your choice (e.g. PyCharm). You will need to install the following libraries in your terminal to run the project: 
-<br/>
-<br/>
-
-1. Install PySimpleGui
-```Bash
-pip install pysimplegui
-```
-
-2. Install PySerial
-```Bash
-pip install pyserial
-```
-
-3. Install Matplotlib
-```Bash
-pip install matplotlib
-```
+The extension is currently undergoing a review process for publication on the Chrome Web Store. Stay tuned! 
 
 <h2> Technologies Used </h2>
 <ul>
