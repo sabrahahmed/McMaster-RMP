@@ -21,6 +21,11 @@ function addToCache(name, prof) {
 
 // Fetch prof info from API
 async function getProf(name) {
+    // If name is long, shorten 
+    if (name.length > 21) {
+        name = name.slice(0, 21) + '...';
+    }
+
     try {
         const response = await fetch(`https://glorious-gown-crow.cyclic.app/api/getProf/${name}`);
         if (!response.ok) {
@@ -36,8 +41,89 @@ async function getProf(name) {
     }
 }
 
+function createProfContainerDiv(type, name, rating, difficulty, percentage, id, numRatings){
+    if(type === 'N/A'){
+        const urlName = name.replace(' ', '+');
+        const googleSearch = `https://www.google.ca/search?q=${urlName}+rate+my+professor`
+
+        return `
+        <div style="position: relative;">
+            <span class="tooltip-container">
+                <div class="tooltip-name" style="text-align: center">
+                    ${name}
+                </div>
+                <br><br><br>
+                <div class="none">
+                    <div>No RateMyProf profile found</div>
+                    <a href="${googleSearch}" target="_blank">Search</a>
+                </div>
+            </span>   
+
+            <div class="modified-name">
+                <span class="rating" style="background-color: black">
+                    N/A
+                </span>  
+                <span class="prof-name">
+                    ${name}
+                </span>
+            </div>
+        </div>
+        `;
+    } 
+
+    const starPercentage = (rating / 5) * 100   
+
+    // Change rating background color based on score 
+    let backgroundColor;
+    if (rating >= 0 && rating <= 2.5) backgroundColor = 'darkred';
+    else if (rating > 2.5 && rating <= 3.6) backgroundColor = 'darkorange';
+    else backgroundColor = 'darkgreen';
+
+    return `
+        <div style="position: relative;">
+            <span class="tooltip-container">
+                <div class="tooltip">
+                    <div class="tooltip-name">${name}</div>
+                    <div class="tooltip-rating" title="${rating}">
+                        <div class="ratings">
+                            <div class="empty-stars"></div>
+                            <div class="full-stars" style="width:${starPercentage}%"></div>
+                        </div>
+                    </div>
+                    <div class="tooltip-data">
+                        <div class="tooltip-difficulty">
+                            ${difficulty}
+                            <div class="description">Difficulty level</div>
+                        </div>
+                        <div class="tooltip-take-again">
+                            ${percentage}%  
+                            <div class="description">Would take again</div>
+                        </div>   
+                    </div>
+                    <small class="tooltip-disclaimer">
+                        <hr>
+                        <div class="tooltip-based">
+                            Based on <a class="num-ratings" href="https://www.ratemyprofessors.com/professor/${id}" target="_blank">${numRatings} rating(s)</a>
+                        </div>
+                        Read reviews to determine rating accuracy
+                    </small>
+                </div>
+            </span>   
+            
+            <div class="modified-name">
+                <span class="rating" style="background-color: ${backgroundColor}">
+                    ${rating}
+                </span>  
+                <span class="prof-name">
+                    ${name}
+                </span>
+            </div>
+        </div>  
+    `;
+}
+
 // Modify DOM elements to display ratings + tooltips
-async function modifyProfDivs(professorElement) {
+async function modifyProfElements(professorElement) {
     const professorNames = professorElement.textContent.trim().split('; ');
     professorElement.innerHTML = ''
 
@@ -59,97 +145,11 @@ async function modifyProfDivs(professorElement) {
         }
 
         if(professorCache[name] === 'N/A'){
-            const urlName = name.replace(' ', '+');
-            const googleSearch = `https://www.google.ca/search?q=${urlName}+rate+my+professor`
-            
-            ratingContainer.innerHTML = `
-                <div style="position: relative;">
-                    <span class="tooltip-container">
-                        <div class="tooltip-name" style="text-align: center">
-                            ${name}
-                        </div>
-                        <br><br><br>
-                        <div class="none">
-                            <div>No RateMyProf profile found</div>
-                            <a href="${googleSearch}" target="_blank">Search</a>
-                        </div>
-                    </span>   
+            ratingContainer.innerHTML = createProfContainerDiv('N/A', name)
 
-                    <div class="modified-name">
-                        <span class="rating" style="background-color: black">
-                            N/A
-                        </span>  
-                        <span class="prof-name">
-                            ${name}
-                        </span>
-                </div>
-                </div>
-            `;
         } else {
             const { id, rating, difficulty, percentage, numRatings} = professorCache[name]
-
-            const starPercentage = (rating / 5) * 100
-    
-            let backgroundColor;
-            if (rating >= 0 && rating <= 2.5) {
-                backgroundColor = 'darkred';
-            } else if (rating > 2.5 && rating <= 3.6) {
-                backgroundColor = 'darkorange';
-            } else {
-                backgroundColor = 'darkgreen';
-            }
-            
-            ratingContainer.innerHTML = `
-            <div style="position: relative;">
-                <span class="tooltip-container">
-    
-                    <div class="tooltip">
-                    
-                        <div class="tooltip-name">${name}</div>
-    
-                        <div class="tooltip-rating" title="${rating}">
-                            <div class="ratings">
-                                <div class="empty-stars"></div>
-                                <div class="full-stars" style="width:${starPercentage}%"></div>
-                            </div>
-                        </div>
-    
-                        <div class="tooltip-data">
-                            
-                            <div class="tooltip-difficulty">
-                                ${difficulty}
-                                <div class="description">Difficulty level</div>
-                            </div>
-    
-                            <div class="tooltip-take-again">
-                                ${percentage}%  
-                                <div class="description">Would take again</div>
-                            </div>   
-    
-                        </div>
-    
-                        <small class="tooltip-disclaimer">
-                            <hr>
-                            <div class="tooltip-based">
-                                Based on <a class="num-ratings" href="https://www.ratemyprofessors.com/professor/${id}" target="_blank">${numRatings} rating(s)</a>
-                            </div>
-    
-                            Read reviews to determine rating accuracy
-                        </small>
-                    </div>
-                </span>   
-    
-                <div class="modified-name">
-                    <span class="rating" style="background-color: ${backgroundColor}">
-                        ${rating}
-                    </span>  
-                    <span class="prof-name">
-                        ${name}
-                    </span>
-                </div>
-    
-            </div>
-            `;
+            ratingContainer.innerHTML = createProfContainerDiv('', name, rating, difficulty, percentage, id, numRatings)
         }
 
         const tooltip = ratingContainer.querySelector(".tooltip-container");
@@ -162,36 +162,27 @@ async function modifyProfDivs(professorElement) {
 
             tooltip.style.display = "block";
         }
+
+        function hideTooltip () {
+            tooltip.style.display = "none"
+        }
         
         ratingContainer.addEventListener("mouseover", (event) => {
             event.stopPropagation(); 
             showTooltip();
         });
         
-        document.addEventListener("click", () => tooltip.style.display = "none"); 
+        document.addEventListener("click", hideTooltip); 
 
         professorElement.appendChild(ratingContainer);
     }
-
-    // Add an event listener to the professorElement to handle the tooltips
-    professorElement.addEventListener("mouseover", (event) => {
-        if (event.target.classList.contains("prof-rating-container")) {
-            showTooltip();
-        }
-    });
-
-    professorElement.addEventListener("mouseout", (event) => {
-        if (event.target.classList.contains("prof-rating-container")) {
-            hideTooltip();
-        }
-    });
 }
 
 // General function to be called on all professors found on the page
-function displayRatings() {
+function displayRatings(professorElements) {
     professorElements.forEach((professorElement) => {
         if (!professorElement.classList.contains('ratings-modified')) {
-            modifyProfDivs(professorElement);
+            modifyProfElements(professorElement);
             professorElement.classList.add('ratings-modified');
         }
     });
@@ -203,14 +194,13 @@ function handleMutation(mutationsList) {
         if (mutation.type === 'childList') {
             // Update  professorElements reference
             professorElements = document.querySelectorAll('[title="Instructor(s)"]');
-            displayRatings();
+            displayRatings(professorElements);
         }
     });
 }
     
 chrome.runtime.sendMessage({ getExtensionState: true }, (response) => {
     if (response && response.extensionState) {
-        // Mutation Observer
         const observer = new MutationObserver(handleMutation);
         const parentElement = document.body;
         const observerConfig = {

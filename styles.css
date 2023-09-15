@@ -18,7 +18,7 @@
     display: none;
     position: absolute;
     top: -130px;
-    left: -275px;
+    left: -240px;
     bottom: 100%; /* Position it above the container */
     z-index: 9999;
     /* background: rgb(111, 19, 54); */
@@ -27,7 +27,7 @@
     font-size: 1rem;
     color: #fff;
     height: 150px;
-    width: 250px;
+    width: 220px;
     border-radius: 10px;
     animation: fadeIn 0.5s;
     /* box-shadow: 0 0 10px 5px; */
@@ -91,7 +91,7 @@
 }
 
 .tooltip-name{
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
 }
 
