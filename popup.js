@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const toggleInput = document.querySelector('input[type="checkbox"]');
-  
+
     toggleInput.addEventListener('change', function () {
       chrome.runtime.sendMessage({ toggleExtension: toggleInput.checked });
   

@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap'); 
-
 
 body {
     min-width: 300px;
@@ -14,15 +11,30 @@ body {
 
 header{
   display: flex;
-  justify-content: space-between;
-  padding: 3px;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+  justify-content: center;
   margin-bottom: 10px;
 }
 
+.logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img{
+  height: 70px;
+  width: 70px;
+}
+
 .title{
-  font-size: 20px;
-  color: rgb(111, 19, 54);
-  font-weight: bold;
+  font-size: 25px;
+  color: white;
+  letter-spacing: 3px;
+  /* font-weight: bold; */
 }
 
 footer{
@@ -34,7 +46,7 @@ footer{
 }
 
 footer a{
-  color: rgb(255, 196, 0);
+  color: #FBBD57;
 }
 
 label.input-toggle {
@@ -48,24 +60,26 @@ label.input-toggle {
 label.input-toggle > span {
   display: inline-block;
   position: relative;
-  background-image: -webkit-linear-gradient(left, #848484 0%, #848484 50%, rgb(255, 196, 0) 50%, rgb(255, 196, 0) 100%);
-  background-image: linear-gradient(to right, #848484 0%, #848484 50%, rgb(255, 196, 0) 50%, rgb(255, 196, 0) 100%);
-  background-size: 64px 14px;
+  background-image: -webkit-linear-gradient(left, #848484 0%, #848484 50%, #fbbc57 50%, #FBBD57 100%);
+  background-image: linear-gradient(to right, #848484 0%, #848484 50%, #FBBD57 50%, #FBBD57 100%);
+  background-size: 96px 24px;
   background-position: 0%;
-  border-radius: 32px;
-  width: 32px;
-  height: 14px;
+  border-radius: 48px;
+  width: 48px; 
+  height: 24px; 
   cursor: pointer;
   -webkit-transition: background-position 0.2s ease-in;
   transition: background-position 0.2s ease-in;
 }
+
 label.input-toggle > input:checked + span { background-position: -100%; }
+
 label.input-toggle > span:after {
   content: "";
   display: block;
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 24px; /* Increased size */
+  height: 24px; /* Increased size */
   background: #F1F1F1;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
@@ -81,21 +95,28 @@ label.input-toggle > span:after {
   transition: left 0.2s ease-in, background-color 0.2s ease-in, transform 0.3s ease;
   transition: left 0.2s ease-in, background-color 0.2s ease-in, transform 0.3s ease, -webkit-transform 0.3s ease;
 }
+
 label.input-toggle > input:checked + span:after {
-  left: calc(100% - 18px);
-  background-color: rgb(192, 147, 0);
+  left: calc(100% - 24px); /* Adjusted for larger size */
+  background-color: white
 }
+
 label.input-toggle > span:active:after {
   -webkit-transform: translateY(-50%) scale3d(1.15, 0.85, 1);
   transform: translateY(-50%) scale3d(1.15, 0.85, 1);
 }
+
 label.input-toggle > input:disabled + span:active:after {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
 label.input-toggle > input:disabled + span { cursor: default; }
+
 label.input-toggle > input:disabled + span { background: #D5D5D5; }
+
 label.input-toggle > input:disabled + span:after { background: #BDBDBD; }
+
 label.input-toggle > input {
   display: block;
   position: absolute;
@@ -103,4 +124,5 @@ label.input-toggle > input {
   width: 0;
   height: 0;
 }
+
   

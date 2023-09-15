@@ -1,6 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap'); 
 
+*{
+    overflow: visible;
+}
+
 @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -13,18 +17,18 @@
 .tooltip-container{
     display: none;
     position: absolute;
-    top: -205px;
+    top: -130px;
     left: -275px;
-    z-index: 9999999;
+    bottom: 100%; /* Position it above the container */
+    z-index: 9999;
     /* background: rgb(111, 19, 54); */
     background: black;
     padding: 8px;
     font-size: 1rem;
     color: #fff;
-    height: 190px;
+    height: 150px;
     width: 250px;
     border-radius: 10px;
-    border-bottom-right-radius: 0;
     animation: fadeIn 0.5s;
     /* box-shadow: 0 0 10px 5px; */
     font-family: 'Raleway', sans-serif;
@@ -32,7 +36,7 @@
 }
 
 .none{
-    color: rgb(255, 196, 0);
+    color: #FBBD57;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,12 +64,12 @@
     justify-content: flex-end;
     margin-top: 2px;
     transition: transform 0.2s; 
+    z-index: 9999;
 }
 
 .modified-name:hover {
     transform: translateY(-2px);
 }
-
 
 .rating{
     cursor: pointer;
@@ -81,8 +85,9 @@
 .prof-name {
     font-size: 13px;
     cursor: pointer;
-    color: rgb(111, 19, 54);
+    color: #6f1336;
     margin-top: 3px;
+    /* font-weight: 500; */
 }
 
 .tooltip-name{
@@ -132,6 +137,7 @@
     text-align: center;
     font-size: 12px;
     color: white;
+    margin-top: -7px;
     margin-bottom: 2px;
 }
 
@@ -144,11 +150,11 @@
 .tooltip-disclaimer{
     font-size: 10px;
     text-align: center;
-    color: rgb(255, 196, 0);
+    color: #FBBD57;
 }
 
 .tooltip-disclaimer button {
-    background-color: rgb(111, 19, 54);
+    background-color: #6f1336;
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
@@ -181,7 +187,7 @@
     top: 0;
     white-space: nowrap;
     overflow: hidden;
-    color: rgb(255, 196, 0);
+    color: #FBBD57;
   }
   
   .empty-stars:before,
@@ -195,14 +201,14 @@
   }
   
   .full-stars:before {
-    -webkit-text-stroke: 1px rgb(255, 196, 0);
+    -webkit-text-stroke: 1px #FBBD57;
   }
   
   /* Webkit-text-stroke is not supported on firefox or IE */
   /* Firefox */
   @-moz-document url-prefix() {
     .full-stars{
-      color: rgb(255, 196, 0);
+      color: #FBBD57;
     }
   }
 
@@ -223,7 +229,7 @@
     height: 17px;
     width: 17px;
     cursor: pointer;
-    accent-color: rgb(255, 196, 0);
+    accent-color: #FBBD57;
 }
 
 

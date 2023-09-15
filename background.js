@@ -1,4 +1,5 @@
 let extensionEnabled = true; // Initial extension state (turned on)
+chrome.storage.local.set({ extensionState: true });
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   if (message.toggleExtension !== undefined) {
