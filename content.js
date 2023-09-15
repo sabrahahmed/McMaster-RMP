@@ -38,8 +38,8 @@ const getProf = async (name) => {
 
 const createProfContainerDiv = (type, name, rating, difficulty, percentage, id, numRatings) => {
     // If name is long, shorten 
-    if (name.length > 21) {
-        name = name.slice(0, 21) + '...';
+    if (name.length > 18) {
+        name = name.slice(0, 18) + '...';
     }
 
     if(type === 'N/A'){
