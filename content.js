@@ -219,10 +219,22 @@ const createFunnyPopup = () => {
     }, 3000); 
 }
   
-// Check if the URL contains the specific portion
-if (window.location.href.includes('https://mytimetable.mcmaster.ca/')) {
-    createFunnyPopup();
-}
+chrome.runtime.sendMessage({ getExtensionState: true }, (response) => {
+    if (response && response.extensionState) {
+        const observer = new MutationObserver(handleMutation);
+        const parentElement = document.body;
+        const observerConfig = {
+            childList: true,
+            subtree: true,
+        };
+        observer.observe(parentElement, observerConfig);
+
+        // Check if the URL contains the specific portion
+        if (window.location.href.includes('https://mytimetable.mcmaster.ca/')) {
+            createFunnyPopup();
+        }
+    }
+});
   
   
   
