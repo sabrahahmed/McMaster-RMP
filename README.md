@@ -21,7 +21,7 @@ Upon logging in, users can easily customize their pacemaker settings across four
 Users can also sign-out or choose to delete their account. 
 
 <p align="center">
-  <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/be0c5da6-0a08-4a2b-ac87-3253caaf24fe" width="600"/>
+  <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/94682735-4414-4de6-bd28-5300a3d817bd" width="600"/>
 </p>
 
 
