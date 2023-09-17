@@ -69,7 +69,30 @@ const createProfContainerDiv = (type, name, rating, difficulty, percentage, id, 
             </div>
         </div>
         `;
-    } 
+    } else if (numRatings === 0){
+        return `
+            <div style="position: relative;">
+                <span class="tooltip-container">
+                    <div class="tooltip-name" style="text-align: center">
+                        ${name}
+                    </div>
+                    <br><br><br>
+                    <div class="none">
+                        <div><a href="https://www.ratemyprofessors.com/professor/${id}" target="_blank">No ratings</a> yet on RateMyProf</div>
+                    </div>
+                </span>   
+
+                <div class="modified-name">
+                    <span class="rating" style="background-color: black">
+                        N/A
+                    </span>  
+                    <span class="prof-name">
+                        ${name}
+                    </span>
+                </div>
+            </div>
+            `;
+    }
 
     const starPercentage = (rating / 5) * 100   
 
