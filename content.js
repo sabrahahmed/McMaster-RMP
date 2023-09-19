@@ -157,7 +157,13 @@ const modifyProfElements = async (professorElement) => {
 
     for (const name of professorNames) {
         if (name === 'Staff') continue;
-
+        
+        // Handle middle names
+        let nameParts = name.split(' ');
+        if (nameParts.length >= 3) {
+            name = nameParts[0] + ' ' + nameParts[nameParts.length - 1];
+        }
+        
         const ratingContainer = document.createElement('div');
         
         if (fetchedProfessors[name]) {
