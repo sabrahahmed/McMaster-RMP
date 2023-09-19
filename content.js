@@ -99,7 +99,8 @@ const createProfContainerDiv = (type, name, rating, difficulty, percentage, id, 
     // Change rating background color based on score 
     let backgroundColor;
     if (rating >= 0 && rating <= 2.5) backgroundColor = 'darkred';
-    else if (rating > 2.5 && rating <= 3.6) backgroundColor = 'darkorange';
+    else if (rating > 2.5 && rating <= 3.4) backgroundColor = 'darkorange';
+    else if (rating > 3.4 && rating <= 3.9) backgroundColor = 'orange';
     else backgroundColor = 'darkgreen';
 
     return `
@@ -155,7 +156,7 @@ const modifyProfElements = async (professorElement) => {
         professorElement.textContent = 'Staff';
     }
 
-    for (const name of professorNames) {
+    for (let name of professorNames) {
         if (name === 'Staff') continue;
         
         // Handle middle names
