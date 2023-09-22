@@ -7,8 +7,7 @@
     "service_worker": "background.js"
   },
   "permissions": [
-    "storage",
-    "tabs"
+    "storage"
   ],
   "content_scripts": [
     {

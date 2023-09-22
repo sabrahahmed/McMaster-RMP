@@ -176,7 +176,6 @@ const modifyProfElements = async (professorElement) => {
 
         if(professorCache[name] === 'N/A'){
             ratingContainer.innerHTML = createProfContainerDiv('N/A', name)
-
         } else {
             const { id, rating, difficulty, percentage, numRatings} = professorCache[name]
             ratingContainer.innerHTML = createProfContainerDiv('', name, rating, difficulty, percentage, id, numRatings)
