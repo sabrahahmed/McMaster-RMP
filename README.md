@@ -1,4 +1,4 @@
-<h1> McMaster RateMyProf </h1>
+<h1> McMaster RMP </h1>
 <p align="center">
   <img src="https://github.com/sabrahahmed/McMaster-RMP/assets/108163033/860aeab1-d175-466b-85ec-b20f25f3067a" width="200"/>
 </p>
